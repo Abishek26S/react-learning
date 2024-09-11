@@ -1,11 +1,25 @@
-// import React from "react";
+// eslint-disable-next-line no-unused-vars
+import React, {
+  createContext,
+  useState,
+} from "react";
+import ComponentA from "./component/ComponentA";
 
-import UserForm from "./component/form/Form";
+export const NameContext = createContext(null);
 
 const App = () => {
+  // const myobj = {
+  //   name: "sonu",
+  //   rollNo: 12,
+  //   email: "bhbonefn",
+  //   address: [1, 2, 3, 5, 6, 7, 8, 9],
+  // };
+  const [count, setCount] = useState(0);
   return (
     <>
-      <UserForm />.
+      <NameContext.Provider value={{ count, setCount }}>
+        <ComponentA />
+      </NameContext.Provider>
     </>
   );
 };
